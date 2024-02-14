@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "phanuwit13",
+      "email": "big.phanuwit@gmail.com",
+      "firstName": "Phanuwit",
+      "lastName": "Kittirong",
+      "gender": "male",
+      "image": "https://robohash.org/Jeanne.png?set=set4",
+      "password": "1234"
+    },
+    {
+      "id": 2,
+      "username": "phanuwit12",
+      "email": "big.phanuwit12@gmail.com",
+      "firstName": "BIG",
+      "lastName": "Phanuwit",
+      "gender": "male",
+      "image": "https://robohash.org/Jeanne.png?set=set4",
+      "password": "1234"
+    }
+  ]
+}
