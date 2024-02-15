@@ -3,7 +3,7 @@ import { useLoadingBackdrop } from '@/components/LoadingBackdrop'
 import { useMessageModal } from '@/components/Modal/MessageModal'
 import { ROUTE } from '@/constants/routes'
 import { useGetLogin } from '@/services'
-import { setupApiAuth } from '@/services/auth/auth'
+// import { setupApiAuth } from '@/services/auth/auth'
 import { useAuth } from '@/store/auth'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
@@ -30,7 +30,9 @@ const Login = () => {
 
   const onSubmit = () => {
     onShowLoading()
-    refetch()
+    refetch().then(() => {
+      onCloseLoading()
+    })
   }
 
   const form = {
@@ -39,10 +41,9 @@ const Login = () => {
   }
 
   useEffect(() => {
-    onCloseLoading()
     if (isSuccess) {
       if (loginData.length) {
-        setupApiAuth('token')
+        // setupApiAuth('token')
         login(
           {
             token: 'token',
@@ -59,7 +60,7 @@ const Login = () => {
           isShow: true,
           message: 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง',
           type: 'error',
-          btnLabel:'close'
+          btnLabel: 'close',
         })
       }
     }

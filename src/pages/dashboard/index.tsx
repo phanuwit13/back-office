@@ -3,7 +3,7 @@ import MachineDashboardList from "@/components/Tables/MachineDashboardList"
 const DashboardPage = () => {
   return (
     <div className="bg-white">
-      <div className='flex flex-wrap'>
+      {/* <div className='flex flex-wrap'>
         <div className='mt-4 w-full lg:w-6/12 xl:w-3/12 px-5 mb-4'>
           <div className='relative flex flex-col min-w-0 break-words bg-white rounded mb-3 xl:mb-0 shadow-lg'>
             <div className='flex-auto p-4'>
@@ -116,7 +116,7 @@ const DashboardPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <MachineDashboardList />
     </div>
   )

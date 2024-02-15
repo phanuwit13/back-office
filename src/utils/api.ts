@@ -1,9 +1,7 @@
 import { useMessageModal } from '@/components/Modal/MessageModal'
 import { config } from '@/configs/env'
-import { AUTH_CREDENTIAL, USER_CREDENTIAL } from '@/constants/auth'
 import { useAuth } from '@/store/auth'
 import axios, { InternalAxiosRequestConfig } from 'axios'
-import { getCookie } from 'cookies-next'
 import { camelizeKeys, decamelizeKeys } from 'humps'
 
 const handleLogout = () => {
@@ -24,10 +22,9 @@ const apiClient = axios.create({
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    Authorization: getCookie(AUTH_CREDENTIAL)
-      ? `Bearer ${getCookie(AUTH_CREDENTIAL)}`
-      : undefined,
-    'X-User-Id': getCookie(USER_CREDENTIAL),
+    // Authorization: getCookie(AUTH_CREDENTIAL)
+    //   ? `Bearer ${getCookie(AUTH_CREDENTIAL)}`
+    //   : undefined,
   },
 })
 
@@ -60,25 +57,23 @@ apiClient.interceptors.response.use(
 )
 
 // Axios middleware to convert all api requests to snake_case
-apiClient.interceptors.request.use(
-  (config: InternalAxiosRequestConfig) => {
-    const newConfig = { ...config }
-    newConfig.url = `${config.url}`
+apiClient.interceptors.request.use((config: InternalAxiosRequestConfig) => {
+  const newConfig = { ...config }
+  newConfig.url = `${config.url}`
 
-    if (newConfig.headers['Content-Type'] === 'multipart/form-data')
-      return newConfig
-
-    if (config.params) {
-      newConfig.params = decamelizeKeys(config.params)
-    }
-
-    if (config.data) {
-      newConfig.data = decamelizeKeys(config.data)
-    }
-
+  if (newConfig.headers['Content-Type'] === 'multipart/form-data')
     return newConfig
+
+  if (config.params) {
+    newConfig.params = decamelizeKeys(config.params)
   }
-)
+
+  if (config.data) {
+    newConfig.data = decamelizeKeys(config.data)
+  }
+
+  return newConfig
+})
 
 export { apiClient }
 

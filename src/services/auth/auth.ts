@@ -2,7 +2,6 @@ import { UserDetailInfo } from '@/services/auth/auth.type'
 import { useAuth } from '@/store/auth'
 import { apiClient } from '@/utils/api'
 import { useQuery } from '@tanstack/react-query'
-import { decamelizeKeys } from 'humps'
 
 export const useUserDetail = ({ id }: { id: string }) => {
   const { token } = useAuth()
@@ -35,23 +34,23 @@ export const useGetLogin = ({
   })
 }
 
-export const setupApiAuth = (token: string) => {
-  apiClient.interceptors.request.use((config) => {
-    const newConfig = { ...config }
-    newConfig.url = `${config.url}`
-    newConfig.headers.Authorization = `Bearer ${token}`
+// export const setupApiAuth = (token: string) => {
+//   apiClient.interceptors.request.use((config) => {
+//     const newConfig = { ...config }
+//     newConfig.url = `${config.url}`
+//     newConfig.headers.Authorization = `Bearer ${token}`
 
-    if (newConfig.headers['Content-Type'] === 'multipart/form-data')
-      return newConfig
+//     if (newConfig.headers['Content-Type'] === 'multipart/form-data')
+//       return newConfig
 
-    if (config.params) {
-      newConfig.params = decamelizeKeys(config.params)
-    }
+//     if (config.params) {
+//       newConfig.params = decamelizeKeys(config.params)
+//     }
 
-    if (config.data) {
-      newConfig.data = decamelizeKeys(config.data)
-    }
+//     if (config.data) {
+//       newConfig.data = decamelizeKeys(config.data)
+//     }
 
-    return newConfig
-  })
-}
+//     return newConfig
+//   })
+// }
