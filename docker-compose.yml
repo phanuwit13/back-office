@@ -10,7 +10,7 @@ services:
       - 3000:80
   json-server:
     build:
-      context: .
+      context: ./
       dockerfile: ./server/Dockerfile
     ports:
       - "8081:8081"
