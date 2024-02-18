@@ -1,23 +1,24 @@
-import { IconName } from "@/components/Icons"
+import { IconName } from '@/components/Icons'
+import { ROUTE } from './routes'
 
 interface Menu {
   path: string
   icon: keyof IconName
   title: string
-  activePath: never[]
+  activePath: string[]
 }
 
 export const MENU_LIST: Menu[] = [
   {
-    path: '/',
+    path: ROUTE.DASHBOARD,
     icon: 'LayoutDashboard',
     title: 'Dashboard',
-    activePath: [],
+    activePath: [ROUTE.DASHBOARD],
   },
   {
-    path: '/config',
+    path: ROUTE.CONFIGS,
     icon: 'Settings',
     title: 'Configs',
-    activePath: [],
+    activePath: [ROUTE.CONFIGS, ROUTE.CONFIGS_MENU],
   },
 ]

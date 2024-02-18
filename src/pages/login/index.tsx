@@ -15,7 +15,12 @@ interface FormLogin {
 
 const Login = () => {
   const { login } = useAuth()
-  const { register, handleSubmit, watch } = useForm<FormLogin>()
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<FormLogin>()
   const { onClose: onCloseLoading, onShow: onShowLoading } =
     useLoadingBackdrop()
   const {
@@ -36,13 +41,17 @@ const Login = () => {
   }
 
   const form = {
-    fieldUsername: register('username'),
-    fieldPassword: register('password'),
+    fieldUsername: register('username', {
+      required: 'field is required',
+    }),
+    fieldPassword: register('password', {
+      required: 'field is required',
+    }),
   }
 
   useEffect(() => {
     if (isSuccess) {
-      if (loginData.length) {
+      if (loginData.data.length) {
         // setupApiAuth('token')
         login(
           {
@@ -51,7 +60,7 @@ const Login = () => {
             remember: true,
           },
           {
-            ...loginData[0],
+            ...loginData.data[0],
           }
         )
       } else {
@@ -67,58 +76,59 @@ const Login = () => {
   }, [isSuccess, login, loginData, onCloseLoading, setInfo])
 
   return (
-    <div className='bg-no-repeat bg-cover bg-center relative '>
+    <div className='bg-primary-50 min-h-[100dvh] py-10'>
+      <img alt='logo' src='/images/logo.webp' className='w-[300px] m-auto' />
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className='space-y-5 max-w-[425px] border p-4 m-auto rounded-lg mt-10'
+        className='space-y-5 max-w-[425px] border p-4 m-auto rounded-lg mt-10 bg-white'
       >
+        {/* <div className='space-y-2'>
+          <label className='text-sm font-medium text-gray-700 tracking-wide'>
+            Username
+          </label>
+          <input
+            className=' w-full text-base px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-green-400'
+            type=''
+            placeholder='Enter your Username'
+            {...form.fieldUsername}
+          />
+        </div> */}
         <div className='space-y-2'>
           <label className='text-sm font-medium text-gray-700 tracking-wide'>
             Username
           </label>
           <input
-            className=' w-full text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400'
-            type=''
-            placeholder='Enter your Username'
+            type='text'
+            placeholder='Username'
+            className='w-full rounded py-2 px-4 border text-sm outline-primary-500'
             {...form.fieldUsername}
           />
+          {errors.username && (
+            <div className='text-[10px] text-red-500 font-normal'>
+              {errors.username.message}
+            </div>
+          )}
         </div>
         <div className='space-y-2'>
-          <label className='mb-5 text-sm font-medium text-gray-700 tracking-wide'>
+          <label className='text-sm font-medium text-gray-700 tracking-wide'>
             Password
           </label>
           <input
-            className='w-full content-center text-base px-4 py-2 border  border-gray-300 rounded-lg focus:outline-none focus:border-green-400'
-            type=''
-            placeholder='Enter your password'
+            type='password'
+            placeholder='Password'
+            className='w-full rounded py-2 px-4 border text-sm outline-primary-500'
             {...form.fieldPassword}
           />
-        </div>
-        <div className='flex items-center justify-between'>
-          <div className='flex items-center'>
-            <input
-              id='remember_me'
-              name='remember_me'
-              type='checkbox'
-              className='h-4 w-4 bg-blue-500 focus:ring-blue-400 border-gray-300 rounded'
-            />
-            <label
-              htmlFor='remember_me'
-              className='ml-2 block text-sm text-gray-800'
-            >
-              Remember me
-            </label>
-          </div>
-          <div className='text-sm'>
-            <a href='#' className='text-green-400 hover:text-green-500'>
-              Forgot your password?
-            </a>
-          </div>
+          {errors.password && (
+            <div className='text-[10px] text-red-500 font-normal'>
+              {errors.password.message}
+            </div>
+          )}
         </div>
         <div>
           <button
             type='submit'
-            className='w-full flex justify-center bg-green-400  hover:bg-green-500 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500'
+            className='border w-full py-2 flex justify-center items-center text-[14px] gap-2 rounded px-8 text-center cursor-pointer bg-primary-400 text-white transition-colors hover:bg-primary-500 hover:text-white'
           >
             Sign in
           </button>

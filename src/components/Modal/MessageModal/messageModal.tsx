@@ -49,7 +49,7 @@ export default function MessageModal() {
               <Dialog.Panel className='w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all'>
                 <Dialog.Title
                   as='div'
-                  className={cn('text-limeGreen-600 flex justify-center', {
+                  className={cn('text-green-600 flex justify-center', {
                     'text-blue-600': type === 'info',
                     'text-red-500': type === 'error',
                     'text-yellow-500': type === 'warning',
@@ -64,7 +64,7 @@ export default function MessageModal() {
                   <button
                     onClick={closeModal}
                     type='button'
-                    className='w-full flex justify-center bg-green-400  hover:bg-green-500 text-gray-100 p-3  rounded-full tracking-wide font-semibold  shadow-lg cursor-pointer transition ease-in duration-500'
+                    className='border border-primary-500 max-w-[120px] font-semibold w-full py-1 flex justify-center items-center text-[14px] gap-2 rounded px-6 text-center cursor-pointer bg-white text-primary-500 transition-colors hover:bg-primary-500 hover:text-white'
                   >
                     {btnLabel ?? 'Close'}
                   </button>

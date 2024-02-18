@@ -1,7 +1,8 @@
 import MainLayout from '@/components/Layout/MainLayout'
 import { ROUTE } from '@/constants/routes'
 import Notfound from '@/pages/404'
-import AboutPage from '@/pages/about'
+import ConfigsPage from '@/pages/configs'
+import ConfigMenuPage from '@/pages/configs/menu'
 import DashboardPage from '@/pages/dashboard'
 import LoginPage from '@/pages/login'
 import { LayoutRouteProps, PathRouteProps } from 'react-router-dom'
@@ -20,8 +21,14 @@ const routeConfig: RouteConfig[] = [
     layout: MainLayout,
   },
   {
-    path: ROUTE.ABOUT,
-    element: <AboutPage />,
+    path: ROUTE.CONFIGS,
+    element: <ConfigsPage />,
+    authGuard:true,
+    layout: MainLayout,
+  },
+  {
+    path: ROUTE.CONFIGS_MENU,
+    element: <ConfigMenuPage />,
     authGuard:true,
     layout: MainLayout,
   },

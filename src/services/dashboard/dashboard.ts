@@ -1,23 +1,14 @@
-import { Machine } from '@/services/dashboard/dashboard.type'
+import { DashboardResponse } from '@/services/dashboard/dashboard.type'
 import { apiClient } from '@/utils/api'
 import { useQuery } from '@tanstack/react-query'
 
-export const useGetMachine = ({
-  offset,
-  limit,
-}: {
-  offset: string
-  limit: string
-}) => {
+
+export const useGetDashboard = () => {
   return useQuery({
-    queryKey: ['get-machine'],
-    queryFn: async (): Promise<Machine[]> => {
-      apiClient.get(`/machine?_start=${offset}&_limit=${limit}`).then((res) => {
-        console.log('res', res)
-      })
-      return []
+    queryKey: ['get-dashboard'],
+    queryFn: () => {
+      return apiClient.get<DashboardResponse>(`/dashboard`)
     },
-    refetchOnWindowFocus: false,
     retry: false,
   })
 }

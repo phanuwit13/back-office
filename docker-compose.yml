@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  back-office-frontend:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - 3000:80
+  json-server:
+    build:
+      context: .
+      dockerfile: ./server/Dockerfile
+    ports:
+      - "8081:8081"

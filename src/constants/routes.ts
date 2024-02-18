@@ -1,5 +1,6 @@
 export const ROUTE = {
   DASHBOARD: '/',
-  ABOUT: '/about',
+  CONFIGS: '/configs',
+  CONFIGS_MENU: '/configs/menu/:id',
   LOGIN: '/login',
 }

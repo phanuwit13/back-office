@@ -1,30 +1,12 @@
-import { useMessageModal } from '@/components/Modal/MessageModal'
 import { config } from '@/configs/env'
-import { useAuth } from '@/store/auth'
 import axios, { InternalAxiosRequestConfig } from 'axios'
 import { camelizeKeys, decamelizeKeys } from 'humps'
-
-const handleLogout = () => {
-  return useAuth.getState().logout
-}
-
-const handleOpenUnauthorized = (msg: string) => {
-  return useMessageModal.getState().setInfo({
-    isShow: true,
-    message: msg,
-    callback: handleLogout(),
-    type: 'warning',
-  })
-}
 
 const apiClient = axios.create({
   baseURL: config.apiEndpoint,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    // Authorization: getCookie(AUTH_CREDENTIAL)
-    //   ? `Bearer ${getCookie(AUTH_CREDENTIAL)}`
-    //   : undefined,
   },
 })
 
@@ -39,17 +21,9 @@ apiClient.interceptors.response.use(
       response.data = camelizeKeys(response.data)
     }
 
-    return response.data
+    return response
   },
   function (error) {
-    if (
-      error.response.status === 401 &&
-      window.location.pathname !== '/admin/login'
-    ) {
-      handleOpenUnauthorized('User Expired')
-      return
-    }
-
     const res = error.response
     console.error('Looks like there was a problem. Status', res.status)
     return Promise.reject(error)

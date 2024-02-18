@@ -2,17 +2,20 @@ import SideBar from '@/components/Layout/MainLayout/SideBar'
 import { Transition } from '@headlessui/react'
 import React, { Fragment, useEffect, useState } from 'react'
 import TopBar from './TopBar'
+import classNames from 'classnames'
 
 interface Props {
   children?: React.ReactNode
 }
 
 const MainLayout = ({ children }: Props) => {
-  const [showNav, setShowNav] = useState(true)
-  const [isMobile, setIsMobile] = useState(false)
+  const [showNav, setShowNav] = useState(
+    window?.innerWidth <= 1024 ? false : true
+  )
+  const [isMobile, setIsMobile] = useState(window?.innerWidth <= 1024 || false)
 
   function handleResize() {
-    if (innerWidth <= 640) {
+    if (innerWidth <= 1024) {
       setShowNav(false)
       setIsMobile(true)
     } else {
@@ -23,9 +26,8 @@ const MainLayout = ({ children }: Props) => {
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      addEventListener('resize', handleResize)
+      addEventListener('reset', handleResize)
     }
-
     return () => {
       removeEventListener('resize', handleResize)
     }
@@ -46,12 +48,19 @@ const MainLayout = ({ children }: Props) => {
       >
         <SideBar />
       </Transition>
+      <div
+        className={classNames('bg-black/30 h-full w-full fixed z-[1] hidden', {
+          '!block': showNav && isMobile,
+        })}
+      />
       <main
         className={`pt-16 transition-all duration-[400ms] ${
           showNav && !isMobile ? 'pl-[280px]' : ''
         }`}
       >
-        <div className='bg-gray-100 min-h-[calc(100dvh-64px)] px-4 md:px-16 pt-8'>{children}</div>
+        <div className='bg-gray-100 min-h-[calc(100dvh-64px)] h-auto px-4 md:px-16 py-8'>
+          {children}
+        </div>
       </main>
     </>
   )

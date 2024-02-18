@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "phanuwit13",
       "email": "big.phanuwit@gmail.com",
       "firstName": "Phanuwit",
@@ -11,7 +11,7 @@
       "password": "1234"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "phanuwit12",
       "email": "big.phanuwit12@gmail.com",
       "firstName": "BIG",
@@ -21,33 +21,120 @@
       "password": "1234"
     }
   ],
+  "dashboard": {
+    "income": 200000,
+    "online": 12,
+    "offline": 12,
+    "maintenance": 12,
+    "topSale": [
+      {
+        "vmNo": "184b551e",
+        "vmName": "Machine-14",
+        "location": "Location-11",
+        "income": 52030,
+        "sale": 867
+      },
+      {
+        "vmNo": "be3cbf19",
+        "vmName": "Machine-3",
+        "location": "Location-24",
+        "income": 43900,
+        "sale": 731
+      },
+      {
+        "vmNo": "68ddcac0",
+        "vmName": "Machine-62",
+        "location": "Location-23",
+        "income": 39900,
+        "sale": 665
+      },
+      {
+        "vmNo": "14915fa2",
+        "vmName": "Machine-41",
+        "location": "Location-18",
+        "income": 32900,
+        "sale": 548
+      },
+      {
+        "vmNo": "14915fa2",
+        "vmName": "Machine-41",
+        "location": "Location-18",
+        "income": 732.5,
+        "sale": 181
+      }
+    ],
+    "notice": [
+      {
+        "vmName": "Machine-14",
+        "type": "error",
+        "msg": "Payment system error detected.."
+      },
+      {
+        "vmName": "Machine-3",
+        "type": "error",
+        "msg": "Urgent maintenance required due to cooling system failure."
+      },
+      {
+        "vmName": "Machine-62",
+        "type": "info",
+        "msg": "Low stock on energy drinks."
+      },
+      {
+        "vmName": "Machine-41",
+        "type": "info",
+        "msg": "Low stock on energy drinks."
+      },
+      {
+        "vmName": "Machine-10",
+        "type": "warning",
+        "msg": "Out of stock on energy drinks."
+      }
+    ]
+  },
   "machine": [
     {
-      "vmNo": "be3cbf19",
-      "vmName": "Machine-3",
+      "vm_no": "184b551e",
+      "vm_name": "Machine-14",
+      "status": "maintenance",
+      "location": "Location-11",
+      "income": 533.75,
+      "sale": 135,
+      "uptime": 97,
+      "id": "0f73",
+      "is_open": true
+    },
+    {
+      "vm_no": "be3cbf19",
+      "vm_name": "Machine-3",
       "status": "offline",
       "location": "Location-24",
       "income": 120.03,
       "sale": 150,
-      "uptime": 60
+      "uptime": 60,
+      "id": "52a0",
+      "is_open": true
     },
     {
-      "vmNo": "68ddcac0",
-      "vmName": "Machine-62",
+      "vm_no": "68ddcac0",
+      "vm_name": "Machine-62",
       "status": "online",
       "location": "Location-23",
       "income": 516.74,
       "sale": 262,
-      "uptime": 92
+      "uptime": 92,
+      "id": "f5d5",
+      "is_open": false
     },
     {
-      "vmNo": "14915fa2",
-      "vmName": "Machine-41",
+      "vm_no": "14915fa2",
+      "vm_name": "Machine-41",
       "status": "offline",
       "location": "Location-18",
       "income": 732.5,
       "sale": 181,
-      "uptime": 11
+      "uptime": 11,
+      "id": "f1da",
+      "is_open": false
     },
     {
       "vmNo": "fe4625c2",
@@ -56,7 +143,9 @@
       "location": "Location-46",
       "income": 448.64,
       "sale": 432,
-      "uptime": 1
+      "uptime": 1,
+      "id": "7df2",
+      "isOpen": true
     },
     {
       "vmNo": "bee3ae15",
@@ -65,7 +154,9 @@
       "location": "Location-20",
       "income": 835.24,
       "sale": 279,
-      "uptime": 85
+      "uptime": 85,
+      "id": "1bc7",
+      "isOpen": true
     },
     {
       "vmNo": "b8cf8765",
@@ -74,7 +165,9 @@
       "location": "Location-33",
       "income": 522.81,
       "sale": 332,
-      "uptime": 93
+      "uptime": 93,
+      "id": "c8b0",
+      "isOpen": true
     },
     {
       "vmNo": "abeba083",
@@ -83,7 +176,9 @@
       "location": "Location-43",
       "income": 418.91,
       "sale": 331,
-      "uptime": 74
+      "uptime": 74,
+      "id": "899b",
+      "isOpen": true
     },
     {
       "vmNo": "8022fb8b",
@@ -92,7 +187,9 @@
       "location": "Location-6",
       "income": 573.44,
       "sale": 283,
-      "uptime": 86
+      "uptime": 86,
+      "id": "edca",
+      "isOpen": true
     },
     {
       "vmNo": "19609ab9",
@@ -101,16 +198,20 @@
       "location": "Location-11",
       "income": 970.98,
       "sale": 51,
-      "uptime": 84
+      "uptime": 84,
+      "id": "c813",
+      "isOpen": true
     },
     {
-      "vmNo": "6a580756",
-      "vmName": "Machine-52",
+      "vm_no": "6a580756",
+      "vm_name": "Machine-52",
       "status": "online",
       "location": "Location-29",
       "income": 657.57,
       "sale": 450,
-      "uptime": 96
+      "uptime": 96,
+      "id": "76b0",
+      "is_open": true
     },
     {
       "vmNo": "db73ea28",
@@ -119,16 +220,20 @@
       "location": "Location-47",
       "income": 780.2,
       "sale": 128,
-      "uptime": 11
+      "uptime": 11,
+      "id": "0fc8",
+      "isOpen": true
     },
     {
-      "vmNo": "c4d01882",
-      "vmName": "Machine-88",
+      "vm_no": "c4d01882",
+      "vm_name": "Machine-88",
       "status": "maintenance",
       "location": "Location-29",
       "income": 782.87,
       "sale": 51,
-      "uptime": 55
+      "uptime": 55,
+      "id": "061a",
+      "is_open": false
     },
     {
       "vmNo": "782c4196",
@@ -137,25 +242,31 @@
       "location": "Location-16",
       "income": 977.06,
       "sale": 272,
-      "uptime": 79
+      "uptime": 79,
+      "id": "da4c",
+      "isOpen": true
     },
     {
-      "vmNo": "0521a80a",
-      "vmName": "Machine-95",
+      "vm_no": "0521a80a",
+      "vm_name": "Machine-95",
       "status": "offline",
       "location": "Location-28",
       "income": 384.82,
       "sale": 347,
-      "uptime": 18
+      "uptime": 18,
+      "id": "6bac",
+      "is_open": false
     },
     {
-      "vmNo": "d6122432",
-      "vmName": "Machine-38",
+      "vm_no": "d6122432",
+      "vm_name": "Machine-38",
       "status": "maintenance",
       "location": "Location-17",
       "income": 614.41,
       "sale": 324,
-      "uptime": 19
+      "uptime": 19,
+      "id": "56fe",
+      "is_open": false
     },
     {
       "vmNo": "e0e86de8",
@@ -164,34 +275,31 @@
       "location": "Location-39",
       "income": 588.53,
       "sale": 436,
-      "uptime": 9
+      "uptime": 9,
+      "id": "916c",
+      "isOpen": true
     },
     {
-      "vmNo": "184b551e",
-      "vmName": "Machine-14",
-      "status": "maintenance",
-      "location": "Location-11",
-      "income": 533.75,
-      "sale": 135,
-      "uptime": 97
-    },
-    {
-      "vmNo": "fdad7b2a",
-      "vmName": "Machine-84",
+      "vm_no": "fdad7b2a",
+      "vm_name": "Machine-84",
       "status": "maintenance",
       "location": "Location-34",
       "income": 590.5,
       "sale": 163,
-      "uptime": 47
+      "uptime": 47,
+      "id": "3136",
+      "is_open": false
     },
     {
-      "vmNo": "d5fee33f",
-      "vmName": "Machine-7",
+      "vm_no": "d5fee33f",
+      "vm_name": "Machine-7",
       "status": "maintenance",
       "location": "Location-22",
       "income": 489.16,
       "sale": 195,
-      "uptime": 16
+      "uptime": 16,
+      "id": "f0e8",
+      "is_open": false
     },
     {
       "vmNo": "c1006a5d",
@@ -200,7 +308,439 @@
       "location": "Location-42",
       "income": 311.22,
       "sale": 245,
-      "uptime": 88
+      "uptime": 88,
+      "id": "6ee4",
+      "isOpen": true
+    }
+  ],
+  "menus": [
+    {
+      "id": "1",
+      "type": "HOT COFFEE",
+      "menus": [
+        {
+          "name": "ESPRESSO",
+          "price": 30.75,
+          "amount": 20
+        },
+        {
+          "name": "DOUBLE ESPRESSO",
+          "price": 30.17,
+          "amount": 15
+        },
+        {
+          "name": "HOT AMERICANO",
+          "price": 76.59,
+          "amount": 19
+        },
+        {
+          "name": "HOT CAFE LATTE",
+          "price": 7.58,
+          "amount": 10
+        },
+        {
+          "name": "HOT CAPPUCCINO",
+          "price": 76.16,
+          "amount": 10
+        },
+        {
+          "name": "HOT MOCHA",
+          "price": 81.61,
+          "amount": 3
+        },
+        {
+          "name": "HOT CARAMEL LATTE",
+          "price": 81.37,
+          "amount": 17
+        },
+        {
+          "name": "HOT TAIWANESE TEA CAFE' LATTE",
+          "price": 11.68,
+          "amount": 16
+        },
+        {
+          "name": "HOT MATCHA LATTE",
+          "price": 80.3,
+          "amount": 5
+        },
+        {
+          "name": "HOT KOKUTO CAFE LATTE",
+          "price": "66.16",
+          "amount": 8
+        },
+        {
+          "name": "HOT THAI TEA CAFELATTE",
+          "price": 94.71,
+          "amount": 7
+        },
+        {
+          "name": "HOT LYCHEE AMERICANO",
+          "price": "50",
+          "amount": 18
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "type": "ICED COFFEE",
+      "menus": [
+        {
+          "name": "ALMOST DIRTY COFFEE",
+          "price": 63.71,
+          "amount": 16
+        },
+        {
+          "name": "ICED ESPRESSO",
+          "price": 49.28,
+          "amount": 4
+        },
+        {
+          "name": "ICED AMERICANO",
+          "price": 70.12,
+          "amount": 2
+        },
+        {
+          "name": "ICED SINGLE ORIGIN AMERICANO",
+          "price": 61.52,
+          "amount": 13
+        },
+        {
+          "name": "ICED CAFE LATTE",
+          "price": 4.81,
+          "amount": 8
+        },
+        {
+          "name": "ICED CAPPUCCINO",
+          "price": 16.19,
+          "amount": 5
+        },
+        {
+          "name": "ICED MOCHA",
+          "price": 41.59,
+          "amount": 7
+        },
+        {
+          "name": "ICED CARAMEL CAFE LATTE",
+          "price": 81.59,
+          "amount": 12
+        },
+        {
+          "name": "ICED TAIWANESE TEA CAFE LATTE",
+          "price": 16.9,
+          "amount": 16
+        },
+        {
+          "name": "ICED MATCHA CAFE' LATTE",
+          "price": 17.52,
+          "amount": 20
+        },
+        {
+          "name": "ICED BROWN SUGAR CAFE LATTE",
+          "price": 12.99,
+          "amount": 12
+        },
+        {
+          "name": "ICED THAI TEA CAFE LATTE",
+          "price": 68.91,
+          "amount": 4
+        },
+        {
+          "name": "ICED LYCHEE AMERICANO",
+          "price": 75.19,
+          "amount": 8
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "type": "HOT MILK",
+      "menus": [
+        {
+          "name": "HOT CARAMEL MILK",
+          "price": 69.18,
+          "amount": 1
+        },
+        {
+          "name": "HOT KOKUTO MILK",
+          "price": 26.09,
+          "amount": 6
+        },
+        {
+          "name": "HOT COCOA",
+          "price": 45.55,
+          "amount": 7
+        },
+        {
+          "name": "HOT CARAMEL COCOA",
+          "price": 32.15,
+          "amount": 12
+        },
+        {
+          "name": "HOT MILK",
+          "price": 59.25,
+          "amount": 16
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "type": "HOT TEA",
+      "menus": [
+        {
+          "name": "HOT GREEN TEA",
+          "price": 10.89,
+          "amount": 2
+        },
+        {
+          "name": "HOT GINGER TEA",
+          "price": 68.2,
+          "amount": 15
+        },
+        {
+          "name": "HOT THAI MILK TEA",
+          "price": 11.56,
+          "amount": 15
+        },
+        {
+          "name": "HOT TAIWANESE TEA",
+          "price": 20.37,
+          "amount": 11
+        },
+        {
+          "name": "HOT MATCHA LATTE",
+          "price": 81.15,
+          "amount": 11
+        },
+        {
+          "name": "HOT BROWBSUGAR TEA",
+          "price": 76.1,
+          "amount": 12
+        },
+        {
+          "name": "HOT LIME TEA",
+          "price": 48.13,
+          "amount": 8
+        },
+        {
+          "name": "HOT LYCHEE TEA",
+          "price": 70.31,
+          "amount": 1
+        },
+        {
+          "name": "HOT STRAWBERRY TEA",
+          "price": 38.36,
+          "amount": 16
+        },
+        {
+          "name": "HOT BLACK TEA",
+          "price": 73.1,
+          "amount": 19
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "type": "ICED TEA",
+      "menus": [
+        {
+          "name": "ICED THAI MILK TEA",
+          "price": 53.43,
+          "amount": 7
+        },
+        {
+          "name": "ICED TAIWANESE MILK TEA",
+          "price": 82.21,
+          "amount": 16
+        },
+        {
+          "name": "ICED MATCHA LATTE",
+          "price": 30.93,
+          "amount": 7
+        },
+        {
+          "name": "ICED BROWNSUGAR TEA",
+          "price": 64.5,
+          "amount": 20
+        },
+        {
+          "name": "ICED LIMEADE TEA",
+          "price": 75.77,
+          "amount": 5
+        },
+        {
+          "name": "ICED LYCHEE TEA",
+          "price": 37.21,
+          "amount": 4
+        },
+        {
+          "name": "ICED STRAWBERRY TEA",
+          "price": 44.17,
+          "amount": 8
+        },
+        {
+          "name": "ICED TEA",
+          "price": 10.84,
+          "amount": 2
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "type": "PROTEIN SHAKE",
+      "menus": [
+        {
+          "name": "MATCHA PROTEIN SHAKE",
+          "price": 55.45,
+          "amount": 4
+        },
+        {
+          "name": "CHOCOLATE PROTEIN SHAKE",
+          "price": 96.73,
+          "amount": 17
+        },
+        {
+          "name": "STRAWBERRY PROTEIN SHAKE",
+          "price": 99.23,
+          "amount": 18
+        },
+        {
+          "name": "ESPRESSO PROTEIN SHAKE",
+          "price": 93.87,
+          "amount": 6
+        },
+        {
+          "name": "THAI TEA PROTEIN SHAKE",
+          "price": 76.92,
+          "amount": 5
+        },
+        {
+          "name": "BROWN SUGAR PROTEIN SHAKE",
+          "price": 37.12,
+          "amount": 20
+        },
+        {
+          "name": "TAIWANESE TEA PROTEIN SHAKE",
+          "price": 75.97,
+          "amount": 11
+        },
+        {
+          "name": "CARAMEL PROTEIN SHAKE",
+          "price": 62.01,
+          "amount": 1
+        },
+        {
+          "name": "PLAIN PROTEIN SHAKE",
+          "price": 97.33,
+          "amount": 5
+        },
+        {
+          "name": "MILK SHAKE",
+          "price": 27.96,
+          "amount": 17
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "type": "SODA",
+      "menus": [
+        {
+          "name": "PEPSI",
+          "price": 81.06,
+          "amount": 18
+        },
+        {
+          "name": "ICED LIMENADE SODA",
+          "price": 17.19,
+          "amount": 15
+        },
+        {
+          "name": "ICED LYCHEE SODA",
+          "price": 17.53,
+          "amount": 6
+        },
+        {
+          "name": "ICED MELON SODA",
+          "price": 4.8,
+          "amount": 15
+        },
+        {
+          "name": "ICED YUZU SODA",
+          "price": 88.98,
+          "amount": 10
+        },
+        {
+          "name": "ICED GINGER SODA",
+          "price": 81.73,
+          "amount": 5
+        },
+        {
+          "name": "ICED UME SODA",
+          "price": 96.01,
+          "amount": 16
+        },
+        {
+          "name": "ICED STRAWBERRY SODA",
+          "price": 81.91,
+          "amount": 9
+        },
+        {
+          "name": "ICED SALA SODA",
+          "price": 38.02,
+          "amount": 16
+        },
+        {
+          "name": "ICED LIME SALA SODA",
+          "price": 78.03,
+          "amount": 11
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "type": "SMOOTHIE",
+      "menus": [
+        {
+          "name": "OREO SMOOTHIE VOCANO",
+          "price": 3.61,
+          "amount": 12
+        },
+        {
+          "name": "COCOA-STRAWBERRY SMOOTHIE",
+          "price": 68.86,
+          "amount": 8
+        },
+        {
+          "name": "OVALTINE SMOOTHIE",
+          "price": 40.84,
+          "amount": 7
+        },
+        {
+          "name": "COCOA-OVALTINE SMOOTHIE",
+          "price": 87.89,
+          "amount": 1
+        },
+        {
+          "name": "STRAWBERRY MILK SMOOTHIE",
+          "price": 31.4,
+          "amount": 17
+        },
+        {
+          "name": "MELON MILK SMOOTHIE",
+          "price": 14.01,
+          "amount": 2
+        },
+        {
+          "name": "YUZU MILK SMOOTHIE",
+          "price": 66.24,
+          "amount": 8
+        },
+        {
+          "name": "LYCHEE MILK SMOOTHIE",
+          "price": 21.94,
+          "amount": 16
+        }
+      ]
     }
   ]
 }

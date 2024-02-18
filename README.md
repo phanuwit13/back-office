@@ -1,30 +1,115 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  
 
-Currently, two official plugins are available:
+# Back-Office
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  
 
-## Expanding the ESLint configuration
+โปรเจกต์ Back-Office เป็นโปรเจกต์ที่พัฒนาด้วย [React](https://reactjs.org/) และใช้งาน [Vite](https://vitejs.dev/) เป็นเครื่องมือในการพัฒนาและสร้างเวอร์ชั่น production ของเว็บแอปพลิเคชัน นอกจากนี้ยังใช้ [json-server](https://github.com/typicode/json-server) เพื่อจำลองการทำงานของ API สำหรับการพัฒนา
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  
 
-- Configure the top-level `parserOptions` property like this:
+## การเริ่มต้นใช้งาน
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+  
+
+หลังจากที่คุณ clone หรือดาวน์โหลดโปรเจกต์นี้มาแล้ว คุณสามารถทำตามขั้นตอนด้านล่างเพื่อเริ่มต้นใช้งาน:
+
+  
+
+### การติดตั้ง Dependencies
+
+  
+
+ใช้คำสั่งด้านล่างเพื่อติดตั้ง dependencies ที่จำเป็น:
+
+```bash
+
+nmp  install
+
+# or
+
+yarn
+
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+  
+
+### การเริ่มต้นเซิร์ฟเวอร์สำหรับพัฒนา
+
+  
+
+เริ่มต้นเว็บเซิร์ฟเวอร์พร้อม hot-reload ด้วยคำสั่ง:
+
+```bash
+
+nmp  run  dev
+
+# or
+
+yarn  dev
+
+```
+
+### การเริ่มต้น JSON Server
+
+  
+
+เริ่มต้น JSON Server บนพอร์ต 8081 ด้วยคำสั่ง:
+
+  
+
+```bash
+
+nmp  run  server
+
+# or
+
+yarn  server
+
+```
+
+  
+
+## การเริ่มต้นใช้งาน with Docker
+
+  
+
+เริ่มต้นเว็บเซิร์ฟเวอร์ด้วยคำสั่ง:
+
+```bash
+
+docker-compose  up
+
+```
+
+  ## Username Password
+```bash
+├── public
+├── server
+│   ├── db.json <-- this file
+│   ├── Dockerfile
+├── src
+```
+
+## การใช้งาน Libraries
+
+  
+
+โปรเจกต์นี้ใช้งาน libraries และเครื่องมือต่างๆ ดังนี้:
+
+  
+
+-  `react-hook-form` สำหรับการจัดการเรื่องของ form
+
+-  `@tanstack/react-query` และ `@tanstack/react-table` สำหรับการจัดการข้อมูลและตาราง
+
+-  `axios` สำหรับการทำ HTTP requests
+
+-  `dayjs` สำหรับการจัดการวันที่
+
+-  `react-router-dom` สำหรับการ route ในแอปพลิเคชัน
+
+-  `zustand` สำหรับการจัดการ state management
+
+-  `eslint` และ `@typescript-eslint` สำหรับการตรวจสอบโค้ด

@@ -1,10 +1,10 @@
 const FallbackSpinnerPage = () => {
   return (
-    <div className='h-[100svh] flex justify-center items-center'>
+    <div className='h-[100dvh] flex justify-center items-center'>
       <div role='status' className="flex items-center flex-col gap-1">
         <svg
           aria-hidden='true'
-          className='w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-limeGreen-600'
+          className='w-8 h-8 mr-2 text-gray-200 animate-spin dark:text-gray-600 fill-primary-600'
           viewBox='0 0 100 101'
           fill='none'
           xmlns='http://www.w3.org/2000/svg'

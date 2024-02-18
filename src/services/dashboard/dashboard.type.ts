@@ -1,13 +1,22 @@
-export interface Dashboard {
-  machine: Machine[]
+export interface DashboardResponse {
+  income: number
+  online: number
+  offline: number
+  maintenance: number
+  topSale: DashboardTopSale[]
+  notice: DashboardNotice[]
 }
 
-export interface Machine {
+export interface DashboardTopSale {
   vmNo: string
   vmName: string
-  status: string
   location: string
   income: number
   sale: number
-  uptime: number
+}
+
+export interface DashboardNotice {
+  type: string
+  msg: string
+  vmName:string
 }
