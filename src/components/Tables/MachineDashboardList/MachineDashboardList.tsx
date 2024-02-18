@@ -1,8 +1,4 @@
-// type Props = {}
-
 import Pagination from '@/components/Pagination'
-import { useQuery } from '@/hooks/useQuery'
-import { useGetMachine } from '@/services/machine/machine'
 import { Machine } from '@/services/machine/machine.type'
 import {
   createColumnHelper,
@@ -12,6 +8,7 @@ import {
 } from '@tanstack/react-table'
 import classNames from 'classnames'
 import ToggleAction from './ToggleAction'
+import { useMachineDashboardList } from './MachineDashboardList.hook'
 
 const columnHelper = createColumnHelper<Machine>()
 
@@ -69,31 +66,13 @@ const columns = [
 ]
 
 const MachineDashboardList = () => {
-  const queryParams = useQuery()
-
-  const limit = queryParams.get('limit') || '5'
-  const offset = queryParams.get('offset') || '0'
-
-  const { data: machineList, isLoading } = useGetMachine({
-    limit: Number(limit),
-    offset: Number(offset),
-  })
-
-  // const mutateMachine = useUpdateMachine()
+  const { machineList, isLoading, limit, offset } = useMachineDashboardList()
 
   const table = useReactTable({
     data: machineList?.list || [],
     columns,
     getCoreRowModel: getCoreRowModel(),
   })
-
-  // const handleUpdateStatusMachine = (data: Machine) => {
-  //   mutateMachine.mutateAsync(data, {
-  //     onSuccess: () => {
-  //       alert('success')
-  //     },
-  //   })
-  // }
 
   if (isLoading) {
     return (
